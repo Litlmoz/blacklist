@@ -1,0 +1,1 @@
+element = ["tpc.googlesyndication.com", "tpc.googlesyndication.com", "ad2.netshelter.net", "pagead2.googlesyndication.com", "cdn1sitescout.edgesuite.net", "clickserv.sitescout.com", "pixel.sitescout.com", "cm.g.doubleclick.net", "media.charter.com", "leadback.advertising.com", "graphics8.nytimes.com/adx", "js.moatads.com", "s0.2mdn.net"]
