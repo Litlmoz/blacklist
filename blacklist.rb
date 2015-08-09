@@ -1,4 +1,4 @@
-element = ["tpc.googlesyndication.com",
+@bad_urls = ["tpc.googlesyndication.com",
   "tpc.googlesyndication.com",
   "ad2.netshelter.net",
   "pagead2.googlesyndication.com",
@@ -15,13 +15,11 @@ element = ["tpc.googlesyndication.com",
 
 # define block ad of url
 def block_ad(url)
-  idx = 0
-  while idx < 12
-
-
-    idx = idx + 1
+  if @bad_urls.include?(url)
+    puts ("ad has been blocked!")
+  else
+    puts ("it's not an ad!")
   end
-  puts("yes")
 end
 
 # Nothing is printed yet
@@ -32,3 +30,4 @@ block_ad("https://ad.doubleclick.net/ddm/trackimp/N5192.276948.NYTIMES/B8892912.
 block_ad("http://static01.nyt.com/images/2015/08/05/us/05JPBIDEN/05JPBIDEN-thumbStandard-v3.jpg")
 #shouldn't be blocked
 block_ad("http://graphics8.nytimes.com/adx/images/ADS/40/97/ad.409789/CRS-7044_Digi_970x250_released.jpg")
+block_ad("js.moatads.com")
