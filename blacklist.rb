@@ -13,13 +13,17 @@
   "s0.2mdn.net",
   "ad.doubleclick.net"]
 
+# does url include bad element loop
+
 # define block ad of url
 def block_ad(url)
-  if @bad_urls.include?(url)
-    puts ("ad has been blocked!")
-  else
-    puts ("it's not an ad!")
-  end
+    @bad_urls.each do |i|
+       if url.include? i
+         puts "ad has been blocked!"
+         return
+       end
+    end
+    puts "this is not an ad!"
 end
 
 # Nothing is printed yet
@@ -28,6 +32,6 @@ end
 block_ad("https://ad.doubleclick.net/ddm/trackimp/N5192.276948.NYTIMES/B8892912.120866475;dc_pre=CMKT6_GgkccCFSUHRQod2FcIHA;dc_trk_aid=293562971;dc_trk_cid=64314577;ord=2015.08.05.05.55.50?")
 #shouldn't be blocked
 block_ad("http://static01.nyt.com/images/2015/08/05/us/05JPBIDEN/05JPBIDEN-thumbStandard-v3.jpg")
-#shouldn't be blocked
+#should be blocked
 block_ad("http://graphics8.nytimes.com/adx/images/ADS/40/97/ad.409789/CRS-7044_Digi_970x250_released.jpg")
 block_ad("js.moatads.com")
